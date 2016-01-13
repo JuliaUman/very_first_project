@@ -1,0 +1,17 @@
+require 'selenium-webdriver'
+
+browser = Selenium::WebDriver.for :firefox
+
+
+browser.get 'http://demo.redmine.org/projects/testing/settings/members'
+
+browser.find_element(:class, 'login').click
+browser.find_element(:id, 'username').send_keys 'Julia'
+browser.find_element(:id, 'password').send_keys 'qwerty123'
+
+browser.find_element(:name, 'login').click
+
+browser.get 'http://demo.redmine.org/projects/testing/settings/members'
+
+browser.find_element(:xpath, '//*[@id="tab-content-members"]/p/a').click
+browser.find_elements(:xpath, '//*[@id="principals"]/label[1]/input').click
