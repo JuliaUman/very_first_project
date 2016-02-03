@@ -1,0 +1,9 @@
+Feature Log in
+  As a user
+  I want to be able
+  to log in to the app
+
+  Scenario: Positive Log in
+    Given on Log in page http://demo.redmine.com
+    When I submit valid credentials
+    Then I am logged in
